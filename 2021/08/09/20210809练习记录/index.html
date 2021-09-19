@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.astatineai.xyz","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="0.模拟前刚刚知道的时候有点慌，毕竟好久没模拟了。 1.模拟第一眼就看到了搜索枚举专题，慌了，最不会的就是写暴力。 开题顺序 1 -&gt; 4 -&gt; 2 -&gt; 3 T1第一题基本和std思路吻合，就是没考虑到在$n$较大情况下只有$10^9$的$k$其实被限制得很死。 期望得分50，实际得分20. 丢分原因：  1.少了一个换行 2.strcmp结果没加取反（我要强行甩锅到键盘） 3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20210809练习记录">
+<meta property="og:url" content="https://blog.astatineai.xyz/2021/08/09/20210809%E7%BB%83%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="望月Asta的博客">
+<meta property="og:description" content="0.模拟前刚刚知道的时候有点慌，毕竟好久没模拟了。 1.模拟第一眼就看到了搜索枚举专题，慌了，最不会的就是写暴力。 开题顺序 1 -&gt; 4 -&gt; 2 -&gt; 3 T1第一题基本和std思路吻合，就是没考虑到在$n$较大情况下只有$10^9$的$k$其实被限制得很死。 期望得分50，实际得分20. 丢分原因：  1.少了一个换行 2.strcmp结果没加取反（我要强行甩锅到键盘） 3">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-09T12:07:08.000Z">
+<meta property="article:modified_time" content="2021-09-19T12:08:36.695Z">
+<meta property="article:author" content="AstatineAHY">
+<meta property="article:tag" content="OI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.astatineai.xyz/2021/08/09/20210809%E7%BB%83%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.astatineai.xyz/2021/08/09/20210809%E7%BB%83%E4%B9%A0%E8%AE%B0%E5%BD%95/","path":"2021/08/09/20210809练习记录/","title":"20210809练习记录"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>20210809练习记录 | 望月Asta的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">望月Asta的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">An OIer's Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section">首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section">关于</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives" rel="section">归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-%E6%A8%A1%E6%8B%9F%E5%89%8D"><span class="nav-number">1.</span> <span class="nav-text">0.模拟前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.</span> <span class="nav-text">1.模拟</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#T1"><span class="nav-number">2.1.</span> <span class="nav-text">T1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#T4"><span class="nav-number">2.2.</span> <span class="nav-text">T4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#T2"><span class="nav-number">2.3.</span> <span class="nav-text">T2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#T3"><span class="nav-number">2.4.</span> <span class="nav-text">T3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%A8%A1%E6%8B%9F%E5%90%8E"><span class="nav-number">3.</span> <span class="nav-text">3.模拟后</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="AstatineAHY"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">AstatineAHY</p>
+  <div class="site-description" itemprop="description">OIer's blog</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/user/122520" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;122520" rel="noopener" target="_blank">洛谷</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.astatineai.xyz/2021/08/09/20210809%E7%BB%83%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="AstatineAHY">
+      <meta itemprop="description" content="OIer's blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="望月Asta的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          20210809练习记录
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-09 20:07:08" itemprop="dateCreated datePublished" datetime="2021-08-09T20:07:08+08:00">2021-08-09</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-09-19 20:08:36" itemprop="dateModified" datetime="2021-09-19T20:08:36+08:00">2021-09-19</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BB%83%E4%B9%A0%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">练习记录</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="0-模拟前"><a href="#0-模拟前" class="headerlink" title="0.模拟前"></a>0.模拟前</h3><p>刚刚知道的时候有点慌，毕竟好久没模拟了。</p>
+<h3 id="1-模拟"><a href="#1-模拟" class="headerlink" title="1.模拟"></a>1.模拟</h3><p>第一眼就看到了搜索枚举专题，慌了，最不会的就是写暴力。 开题顺序 1 -&gt; 4 -&gt; 2 -&gt; 3</p>
+<h4 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h4><p>第一题基本和std思路吻合，就是没考虑到在$n$较大情况下只有$10^9$的$k$其实被限制得很死。 期望得分50，实际得分20. 丢分原因：</p>
+<ul>
+<li>1.少了一个换行</li>
+<li>2.strcmp结果没加取反（我要强行甩锅到键盘）</li>
+<li>3.讨论少了一个无解结果</li>
+</ul>
+<p>这次记住了strcmp返回值是1,0,-1，但是还是出大问题。 放个完成的代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ff(a,b,c) for(register int a = (b);a &lt;= (c);++a)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fb(a,b,c) for(register int a = (b);a &gt;= (c);--a)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fe(a,b) for(register int a = head[b]; ~a;a = e[a].nxt)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mian main</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> space putchar(<span class="meta-string">&#x27; &#x27;</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> enter putchar(<span class="meta-string">&#x27;\n&#x27;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> db;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">100005</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ll res = <span class="number">0</span>;<span class="keyword">char</span> ch = <span class="built_in">getchar</span>();<span class="keyword">bool</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(ch &lt; <span class="string">&#x27;0&#x27;</span>  ch &gt;<span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(ch == <span class="string">&#x27;-&#x27;</span>) m = <span class="number">1</span>;</span><br><span class="line">        ch = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(ch &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; ch &lt;= <span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">        res = (res &lt;&lt; <span class="number">3</span>) + (res &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>);</span><br><span class="line">        ch = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> m ? -res : res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(ll x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>),x = -x;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> sta[<span class="number">35</span>];</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        sta[top++] = x % <span class="number">10</span>,x /= <span class="number">10</span>;</span><br><span class="line">    &#125;<span class="keyword">while</span>(x);</span><br><span class="line">    <span class="keyword">while</span>(top)</span><br><span class="line">        <span class="built_in">putchar</span>(sta[--top] + <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> hid[<span class="number">10</span>] = <span class="string">&quot;hzwer&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,k,a,b,cnt;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> s[<span class="number">105</span>];</span><br><span class="line">    ll siz;</span><br><span class="line">    <span class="keyword">int</span> nlen;</span><br><span class="line">    <span class="keyword">int</span> v;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &gt; (<span class="keyword">const</span> Node&amp; oth) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> v != oth.v ? v &lt; oth.v : !(<span class="built_in">strcmp</span>(s,oth.s) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addh</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">ff</span>(i,<span class="number">0</span>,<span class="number">4</span>) s[pos + i] = hid[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addo</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">        s[pos] = <span class="string">&#x27;o&#x27;</span>;</span><br><span class="line">        s[pos + <span class="number">1</span>] = <span class="string">&#x27;r&#x27;</span>;</span><br><span class="line">        s[pos + <span class="number">2</span>] = <span class="string">&#x27;z&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">ff</span>(i,<span class="number">1</span>,n - nlen) <span class="built_in">putchar</span>(s[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;res[<span class="number">10005</span>],t;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(ll x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">    ll res = <span class="built_in">qpow</span>(x &gt;&gt; <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> (x &amp; <span class="number">1</span>) ? res * res * <span class="number">10</span> : res * res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> tlen,<span class="keyword">int</span> onum,<span class="keyword">int</span> hnum)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n - tlen &lt;= <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(n - tlen &gt;= <span class="number">5</span>) &#123;</span><br><span class="line">        t.v += (a + b * onum);</span><br><span class="line">        t.<span class="built_in">addh</span>(tlen + <span class="number">1</span>);</span><br><span class="line">        t.nlen = n - tlen - <span class="number">5</span>;</span><br><span class="line">        t.siz = t.nlen ? <span class="number">1LL</span> * <span class="number">9</span> * <span class="built_in">qpow</span>(t.nlen - <span class="number">1</span>) : <span class="number">1</span>;</span><br><span class="line">        res[++cnt] = t;</span><br><span class="line">        <span class="built_in">dfs</span>(tlen + <span class="number">5</span>,onum,hnum + <span class="number">1</span>);</span><br><span class="line">        t.v -= (a + b * onum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n - tlen &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">        t.<span class="built_in">addo</span>(tlen + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(hnum) &#123;</span><br><span class="line">            t.nlen = n - tlen - <span class="number">3</span>;</span><br><span class="line">            t.siz = t.nlen ? <span class="number">1LL</span> * <span class="number">9</span> * <span class="built_in">qpow</span>(t.nlen - <span class="number">1</span>) : <span class="number">1</span>;</span><br><span class="line">            res[++cnt] = t;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">dfs</span>(tlen + <span class="number">3</span>,onum + <span class="number">1</span>,hnum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mian</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T = <span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        cnt = <span class="number">0</span>;</span><br><span class="line">        n = <span class="built_in">read</span>(),k = <span class="built_in">read</span>(),a = <span class="built_in">read</span>(),b = <span class="built_in">read</span>();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">5</span>) &#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">14</span>) &#123;</span><br><span class="line">            t = (Node)&#123;<span class="string">&quot;&quot;</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">            <span class="built_in">dfs</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">            <span class="built_in">sort</span>(res + <span class="number">1</span>,res + cnt + <span class="number">1</span>,greater&lt;Node&gt;());</span><br><span class="line">            <span class="keyword">int</span> pos = <span class="number">0</span>,ind;</span><br><span class="line">            <span class="keyword">for</span>(ind = <span class="number">1</span>;ind &lt;= cnt &amp;&amp; pos + res[ind].siz &lt; k;++ind) pos += res[ind].siz;</span><br><span class="line">            <span class="keyword">if</span>(ind == cnt + <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            res[ind].<span class="built_in">write</span>();</span><br><span class="line">            <span class="keyword">if</span>(res[ind].nlen) <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,<span class="number">1LL</span> * <span class="built_in">qpow</span>(res[ind].nlen - <span class="number">1</span>) + k - pos - <span class="number">1</span>);</span><br><span class="line">            enter;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(n &gt;= <span class="number">15</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;hzwer1&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> len = <span class="number">0</span>,t = k;</span><br><span class="line">            <span class="keyword">while</span>(t) &#123;</span><br><span class="line">                t /= <span class="number">10</span>;</span><br><span class="line">                len++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">ff</span>(i,<span class="number">1</span>,n - len - <span class="number">6</span>) <span class="built_in">putchar</span>(<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,k - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h4><p>第四题很稳，写了$2^n$的暴力，对具体条件的判断写得有些慢，调试的时候还有return忘记删，还是缺少写部分分的经验。 std思路：对于任意的限制，仅有第一种是限制所有$n$个人的。 于是按照第一个语句进行分段，暴力枚举所有的第一种语句的正误进行check即可。</p>
+<h4 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h4><p>有五种不同规格的棋子转移写起来很麻烦。 记录棋子和std一样用了只记录左上角，但是因为没想到是hash来记录情况导致认为是IDA* 之类来限制移动次数，最后也没乐观估价成。 固输-1有分就离谱。</p>
+<h4 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h4><p>刚开题立即想到分别找横纵坐标的中位数作为转移终点。 但是最后因为没证出来这个贪心的复杂度于是没敢写。 看到std后悔万分。 自信心++</p>
+<h3 id="3-模拟后"><a href="#3-模拟后" class="headerlink" title="3.模拟后"></a>3.模拟后</h3><p>考搜索为什么不考danclinks sto KHIN orz sto wind whisper orz 还需努力！</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/06/26/lca-to-rmq/" rel="prev" title="更多查询-LCA转RMQ">
+                  <i class="fa fa-chevron-left"></i> 更多查询-LCA转RMQ
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/09/09/hello-world/" rel="next" title="Hello World">
+                  Hello World <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AstatineAHY</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by"><a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 针不辍,大家都来使用它
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
