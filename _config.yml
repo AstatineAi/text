@@ -103,6 +103,5 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo:
-    github: https://github.com/AstatineAi/AstatineAi.github.io.git
-    branch: gh-pages
+  repo: https://github.com/AstatineAi/AstatineAi.github.io.git
+  branch: gh-pages
