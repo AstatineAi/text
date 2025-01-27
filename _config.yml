@@ -4,17 +4,17 @@
 
 # Site
 title: Lacanian Psychopath
-subtitle: 'Asta 的博客'
+subtitle: '胡言乱语'
 description: ''
 keywords:
-author: 望月 Asta
+author: Astinita
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://astatineai.github.io/
-permalink: post/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
