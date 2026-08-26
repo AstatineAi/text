@@ -19,7 +19,7 @@ minify: false
 # Define custom file paths.
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
 custom_file_path:
-  #head: source/_data/head.njk
+  head: source/_data/head.njk
   #header: source/_data/header.njk
   #sidebar: source/_data/sidebar.njk
   #postMeta: source/_data/post-meta.njk
@@ -338,7 +338,7 @@ calendar:
 
 # Preload styles and preconnect CDN for fonts and plugins.
 # For more information: https://www.w3.org/TR/resource-hints/#preconnect
-preconnect: false
+preconnect: true
 
 # Set the text alignment in posts / pages.
 text_align:
@@ -426,7 +426,7 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
   host:
@@ -439,30 +439,30 @@ font:
   # Global font settings used for all elements inside <body>.
   global:
     external: true
-    family: Lato
+    family: Roboto, LXGW WenKai
     size:
 
   # Font settings for site title (.site-title).
   title:
     external: true
-    family:
+    family: Bitter, LXGW WenKai
     size:
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
     external: true
-    family:
+    family: Bitter, LXGW WenKai
     size:
 
   # Font settings for posts (.post-body).
   posts:
     external: true
-    family:
+    family: Bitter, LXGW WenKai
 
   # Font settings for <code> and code blocks.
   codes:
-    external: true
-    family:
+    external: false
+    family: Consolas, LXGW WenKai
 
 
 # ---------------------------------------------------------------
