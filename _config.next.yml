@@ -429,7 +429,7 @@ font:
   enable: true
 
   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
-  host:
+  host: https://cdn.jsdelivr.net
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -438,25 +438,25 @@ font:
 
   # Global font settings used for all elements inside <body>.
   global:
-    external: true
+    external: false
     family: Roboto, LXGW WenKai
     size:
 
   # Font settings for site title (.site-title).
   title:
-    external: true
+    external: false
     family: Bitter, LXGW WenKai
     size:
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
-    external: true
+    external: false
     family: Bitter, LXGW WenKai
     size:
 
   # Font settings for posts (.post-body).
   posts:
-    external: true
+    external: false
     family: Bitter, LXGW WenKai
 
   # Font settings for <code> and code blocks.

@@ -1,2 +1,11 @@
-{# NexT requests only latin subsets for configured Google Fonts. Load the CJK glyphs too. #}
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai:wght@300;400;700&display=swap">
+{# Load pinned, subsetted webfonts independently of Google Fonts. #}
+{% for family in ['roboto', 'bitter'] %}
+  {% for weight in [300, 400, 700] %}
+    {% for style in ['', '-italic'] %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/{{ family }}@5.3.0/latin-{{ weight }}{{ style }}.css">
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-light.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-bold.css">
